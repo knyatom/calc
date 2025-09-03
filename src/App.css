@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
+/* Google Fonts에서 'Inter' 폰트를 가져와 사용합니다. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* 전체 페이지 스타일 */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1a1a2e; /* 어두운 배경색 */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* 계산기 컨테이너 스타일 */
+.calculator {
+  width: 100%;
+  max-width: 350px; /* 최대 너비 설정 */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background-color: #1f2a40; /* 카드 배경색 */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* 계산기 화면 스타일 */
+.calculator-display {
+  background-color: #151a24;
+  color: #d1d1e0;
+  font-size: 2.5em;
+  padding: 25px 20px;
+  text-align: right;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 버튼 그리드 컨테이너 */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* 모든 버튼의 기본 스타일 */
+.calculator-buttons button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5em;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  background-color: #2b3a50; /* 버튼 기본 색상 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 버튼 호버 효과 */
+.calculator-buttons button:hover {
+  background-color: #3f516a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 연산자 버튼 스타일 */
+.operator {
+  background-color: #ff6b6b; /* 빨간색 계열 */
+  color: #fff;
+}
+
+.operator:hover {
+  background-color: #ff4747;
+}
+
+/* 'AC' 버튼 스타일 */
+.all-clear {
+  background-color: #6a8e8f; /* 차분한 청록색 */
+}
+
+.all-clear:hover {
+  background-color: #55797a;
+}
+
+/* '=' 버튼 스타일 */
+.equal-sign {
+  background-color: #5d5dff; /* 파란색 계열 */
+  grid-column: span 2; /* 두 칸 차지 */
+}
+
+.equal-sign:hover {
+  background-color: #4a4aff;
 }
